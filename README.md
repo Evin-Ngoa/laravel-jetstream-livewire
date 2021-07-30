@@ -10,15 +10,15 @@
 - Have Team Management Demo. Run : `php artisan jetstream:install livewire --teams`
 - Run Frontend Dependencies : `npm install && npm run dev`
 
-# Step 3
+## Step 3
 - Edit `.env` file and add your db creentials.
 - Run Migration `php artisan migrate`
 - Start Server :   `php artisan serve`
 
-# Step 4 Simple Crud
+## Step 4 Simple Crud
 - Create Model and migration for Student - `php artisan make:model Student -m`
 
-# Step 5 Livewire Student Components
+## Step 5 Livewire Student Components
 - Run : `php artisan make:livewire Student\\crud`. 
 - Above creates 
 ```
