@@ -14,3 +14,6 @@
 - Edit `.env` file and add your db creentials.
 - Run Migration `php artisan migrate`
 - Start Server :   `php artisan serve`
+
+# Step 4 Simple Crud
+- Create Model and migration for Student - `php artisan make:model Student -m`
