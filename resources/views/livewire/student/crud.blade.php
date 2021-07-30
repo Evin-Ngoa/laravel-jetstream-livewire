@@ -1,0 +1,51 @@
+<x-slot name="header">
+    <h2 class="text-center">Laravel 8 Livewire CRUD Demo</h2>
+</x-slot>
+<div class="py-12">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
+            @if (session()->has('message'))
+            <div class="bg-red-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3"
+                role="alert">
+                <div class="flex">
+                    <div>
+                        <p class="text-sm">{{ session('message') }}</p>
+                    </div>
+                </div>
+            </div>
+            @endif
+            <button wire:click="create()"
+                class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">Create Student</button>
+            @if($isModalOpen)
+                @include('livewire.student.create')
+            @endif
+            <table class="table-fixed w-full">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="px-4 py-2 w-20">No.</th>
+                        <th class="px-4 py-2">Name</th>
+                        <th class="px-4 py-2">Email</th>
+                        <th class="px-4 py-2">Mobile</th>
+                        <th class="px-4 py-2">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($students as $student)
+                    <tr>
+                        <td class="border px-4 py-2">{{ $student->id }}</td>
+                        <td class="border px-4 py-2">{{ $student->name }}</td>
+                        <td class="border px-4 py-2">{{ $student->email}}</td>
+                        <td class="border px-4 py-2">{{ $student->mobile}}</td>
+                        <td class="border px-4 py-2">
+                            <button wire:click="edit({{ $student->id }})"
+                                class="bg-indigo-500 focus:bg-indigo-600  text-white font-bold py-2 px-4 rounded">Edit</button>
+                            <button wire:click="delete({{ $student->id }})"
+                                class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -17,3 +17,15 @@
 
 # Step 4 Simple Crud
 - Create Model and migration for Student - `php artisan make:model Student -m`
+
+# Step 5 Livewire Student Components
+- Run : `php artisan make:livewire Student\\crud`. 
+- Above creates 
+```
+CLASS: app/Http/Livewire/Student/Crud.php
+
+VIEW:  resources/views/livewire/student/crud.blade.php
+```
+
+- Run Migration `php artisan migrate`
+- Start Server :   `php artisan serve`

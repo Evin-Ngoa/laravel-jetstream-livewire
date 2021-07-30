@@ -63,6 +63,14 @@
                                     @foreach (Auth::user()->allTeams() as $team)
                                         <x-jet-switchable-team :team="$team" />
                                     @endforeach
+                                    <div class="border-t border-gray-100"></div>
+                                    <div class="block px-4 py-2 text-xs text-gray-400">
+                                        {{ __('Manage Students') }}
+                                    </div>
+                                    <!-- Add Student -->
+                                    <x-jet-dropdown-link href="{{ route('students') }}">
+                                            {{ __('Students') }}
+                                    </x-jet-dropdown-link>
                                 </div>
                             </x-slot>
                         </x-jet-dropdown>
