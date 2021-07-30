@@ -11,3 +11,6 @@
 - Run Frontend Dependencies : `npm install && npm run dev`
 
 # Step 3
+- Edit `.env` file and add your db creentials.
+- Run Migration `php artisan migrate`
+- Start Server :   `php artisan serve`
